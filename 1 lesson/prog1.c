@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 int main() {
+    // FIXIT: создайте отдельную именованную константу для числа 100
     char digits[100];
     int k, m;
     printf("Write number, old system and new system\n");
