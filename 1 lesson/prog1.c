@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define SIZE 100
+
 int main() {
     // FIXIT: создайте отдельную именованную константу для числа 100
-    char digits[100];
+    char digits[SIZE];
     int k, m;
     printf("Write number, old system and new system\n");
 
