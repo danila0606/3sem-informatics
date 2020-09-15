@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+#include <stdint.h>
+
+using namespace std;
+//a
+//aba
+//abacaba     
+//abacabadabacaba
+//0123456789
+// a%2 = 0 (2 % 2 - 1); b%4 = 1(4 % 2 - 1); 
+// c%8 = 3(8 % 2 - 1); d%16 = 7(16 % 2 - 1) etc...
+
+void GenerateString(char *str, uint64_t n) {
+   
+   if (!n) {
+       str[0] = 'a';
+       return;
+   }
+   
+   uint64_t half = pow(2, n);
+   for (uint64_t i = 0; i < 2 * half - 1; i++) {
+       for (uint64_t k = 2, t = 0; k <= 2 * half; k *= 2, t++) {
+           if (i % k == k / 2 - 1) 
+               str[i] = 'a' + t;
+       }
+   }
+   str[2 * half - 1] = '\0';
+}
+
+int main() {
+    uint64_t N = 0;
+    scanf ("%d", &N);
+    uint64_t len = pow(2, N + 1);
+    char* str = (char*)calloc(len, sizeof(char));
+    GenerateString(str, N);
+
+    printf("%s\n", str);
+    free(str);
+    
+    return 0;
+}
