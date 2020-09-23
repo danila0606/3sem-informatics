@@ -23,7 +23,7 @@ int main()
 			int status = 0;
 			wait(&status);
 			printf("Child process %d PID:[%d] finished.", i, pid);
-            printf("Parent process PID:[%d]\n", getpid());
+            		printf("Parent process PID:[%d]\n", getpid());
 			exit(0);
 		}
 	}
